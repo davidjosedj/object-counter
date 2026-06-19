@@ -48,26 +48,26 @@ postgres:
 
 # ── Run ────────────────────────────────────────────────────────────────────────
 run:
-	PYTHONPATH=. python -m counter.entrypoints.webapp
+	PYTHONPATH=. .venv/Scripts/python.exe -m counter.entrypoints.webapp
 
 run-local:
-	PYTHONPATH=. ENV=local python -m counter.entrypoints.webapp
+	PYTHONPATH=. ENV=local .venv/Scripts/python.exe -m counter.entrypoints.webapp
 
 run-prod:
-	PYTHONPATH=. ENV=prod python -m counter.entrypoints.webapp
+	PYTHONPATH=. ENV=prod .venv/Scripts/python.exe -m counter.entrypoints.webapp
 
 run-prod-postgres:
-	PYTHONPATH=. ENV=prod DB_TYPE=postgres POSTGRES_PASSWORD=password python -m counter.entrypoints.webapp
+	PYTHONPATH=. ENV=prod DB_TYPE=postgres POSTGRES_PASSWORD=password .venv/Scripts/python.exe -m counter.entrypoints.webapp
 
 # ── Test ───────────────────────────────────────────────────────────────────────
 test:
-	PYTHONPATH=. pytest
+	PYTHONPATH=. .venv/Scripts/pytest.exe
 
 test-verbose:
-	PYTHONPATH=. pytest -v
+	PYTHONPATH=. .venv/Scripts/pytest.exe -v
 
 test-coverage:
-	PYTHONPATH=. pytest --cov=counter --cov-report=term-missing --cov-report=html
+	PYTHONPATH=. .venv/Scripts/pytest.exe --cov=counter --cov-report=term-missing --cov-report=html
 
 # ── Clean ──────────────────────────────────────────────────────────────────────
 clean:
